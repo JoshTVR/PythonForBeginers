@@ -217,4 +217,224 @@ bmi = 67.600 / (1.76 ** 2)
 print(bmi)  # Output: 22.86
 ```
 
+---
+
+### User Input
+
+Thus far, we've only been outputting things to the user, making our programs one-sided and not that fun. Almost every popular website, mobile app, or video game nowadays has both input and output.
+
+Python uses the `input()` function to get user input:
+
+```python
+username = input('Enter your name: ')
+print('Your name is: ' + username)
+```
+
+The output will say "Enter your name: " and the user can type in something, hit enter, and whatever the user typed gets stored into the `username` variable.
+
+By default, the user input is stored as a text string, which is okay for now. If a numeric input is required, use `int()`:
+
+```python
+age = int(input('What is your age? '))
+print(age)
+```
+
+### Pythagorean Theorem
+
+The Pythagorean theorem describes the relationship between the sides of a right triangle:
+
+```python
+a = int(input('What would be the first short a side? '))
+b = int(input('What would be the second short b side? '))
+
+c = ((a**2 + b**2)**0.5)
+print(c)
+```
+
+### Currency Conversion
+
+Let's create a program to convert leftover currency to USD:
+
+```python
+co = int(input('What do you have left in Colombian pesos?? '))
+pe = int(input('What do you have left in Peruvian soles?? '))
+br = int(input('What do you have left in Brazilian reais?? '))
+
+cousd = co * 0.0002319
+peusd = pe * 0.2685
+brusd = br * 0.1722
+
+leftovers = cousd + peusd + brusd
+print(leftovers)
+```
+
+### Decision Making with If/Else Statements
+
+Let's simulate a coin flip:
+
+```python
+import random
+
+num = random.randint(0, 1)
+
+if num > 0.5:
+  print('Heads')
+else:
+  print('Tails')
+```
+
+---
+
+### Recap of Python Basics
+
+- **Data types**: `int`, `float`, `str`, `bool`
+- **Arithmetic operators**: `+`, `-`, `*`, `/`
+- The `%` modulo finds the remainder
+- The `**` exponentiation finds the exponent
+- The `input()` function gets user input
+- The `int()` function converts values into integers
+
 Happy coding!
+
+---
+
+### String Manipulation
+
+Python provides various methods to manipulate strings, including concatenation, slicing, and formatting:
+
+```python
+first_name = "Richard"
+last_name = "Hendricks"
+full_name = first_name + " " + last_name
+print(full_name)  # Output: Richard Hendricks
+
+# Slicing strings
+print(full_name[:7])  # Output: Richard
+print(full_name[-9:])  # Output: Hendricks
+```
+
+String formatting example:
+
+```python
+age = 25
+intro = f"My name is {full_name} and I am {age} years old."
+print(intro)
+# Output: My name is Richard Hendricks and I am 25 years old.
+```
+
+---
+
+### Lists
+
+Lists are collections of items that can store different data types:
+
+```python
+fruits = ["apple", "banana", "cherry"]
+print(fruits[0])  # Output: apple
+```
+
+Lists can be modified:
+
+```python
+fruits.append("orange")
+print(fruits)  # Output: ['apple', 'banana', 'cherry', 'orange']
+```
+
+---
+
+### Conditional Statements
+
+Python uses conditional statements (`if`, `elif`, `else`) to make decisions:
+
+```python
+score = 85
+
+if score >= 90:
+    print("Grade: A")
+elif score >= 80:
+    print("Grade: B")
+else:
+    print("Grade: C")
+
+# Output: Grade: B
+```
+
+---
+
+### Loops
+
+Loops help to execute code repeatedly.
+
+#### For Loop
+
+```python
+for fruit in fruits:
+    print(fruit)
+
+# Output:
+# apple
+# banana
+# cherry
+# orange
+```
+
+#### While Loop
+
+```python
+count = 0
+while count < 3:
+    print("Count is:", count)
+    count += 1
+
+# Output:
+# Count is: 0
+# Count is: 1
+# Count is: 2
+```
+
+---
+
+### Functions
+
+Functions encapsulate reusable code blocks:
+
+```python
+def greet(name):
+    return f"Hello, {name}!"
+
+message = greet("Dinesh")
+print(message)  # Output: Hello, Dinesh!
+```
+
+---
+
+### Importing Modules
+
+Python allows importing external libraries:
+
+```python
+import math
+
+print(math.sqrt(16))  # Output: 4.0
+```
+
+---
+
+### Handling Errors (Try/Except)
+
+Python handles exceptions gracefully using `try` and `except`:
+
+```python
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+
+# Output: Cannot divide by zero!
+```
+
+---
+
+### Final Thoughts
+
+With these fundamentals, you're equipped to write and understand basic Python scripts. Keep exploring, coding, and having fun!
