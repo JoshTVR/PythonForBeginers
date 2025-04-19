@@ -13,6 +13,6 @@ It's also super versatile and used in the following:
 
 All the code we write in this course will be in Python files, with the .py extension. And we write them inside a code editor.
 
-Hope you enjoy my progress;)
+Hope you enjoy my progress learning Python :\)
 
-![Base de Datos](./Unidad1/images/image1.jpg)
+![alt text](Images/pythonlogo.jpg)

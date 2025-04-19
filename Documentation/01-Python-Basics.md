@@ -251,36 +251,35 @@ c = ((a**2 + b**2)**0.5)
 print(c)
 ```
 
-### Currency Conversion
+Claro, aquí tienes el contenido adicional incorporado directamente al documento en Markdown respetando el mismo formato original:
 
-Let's create a program to convert leftover currency to USD:
+---
+
+### Currency Conversion (South America Trip Example)
+
+We just got home from a fun trip to South America, specifically Colombia, Peru, and Brazil. There's some leftover cash in:
+
+- 🇨🇴 Colombian pesos
+- 🇵🇪 Peruvian soles
+- 🇧🇷 Brazilian reais
+
+Create a `currency.py` program that asks the user for the amount they have in pesos, soles, and reais and calculates the total in USD.
+
+Make sure to Google the current exchange rates!
 
 ```python
 co = int(input('What do you have left in Colombian pesos?? '))
 pe = int(input('What do you have left in Peruvian soles?? '))
 br = int(input('What do you have left in Brazilian reais?? '))
 
+# Exchange rates as of the time the program was written
 cousd = co * 0.0002319
 peusd = pe * 0.2685
 brusd = br * 0.1722
 
 leftovers = cousd + peusd + brusd
+
 print(leftovers)
-```
-
-### Decision Making with If/Else Statements
-
-Let's simulate a coin flip:
-
-```python
-import random
-
-num = random.randint(0, 1)
-
-if num > 0.5:
-  print('Heads')
-else:
-  print('Tails')
 ```
 
 ---
@@ -294,7 +293,240 @@ else:
 - The `input()` function gets user input
 - The `int()` function converts values into integers
 
-Happy coding!
+---
+
+### Decision Making (Introduction)
+
+So far, every Python program we've encountered has only had one path of execution:  
+they all execute one line at a time, from top to bottom. Every time you run them, it gives you the same result.
+
+Sometimes, we want our program to do different things based on different conditions.
+
+We will explore how programs "make decisions" by evaluating different conditions and start introducing logic into our code!
+
+Before we dive deep into something called an **if statement**, let's do a fun demo using a coin flip simulation!
+
+We will learn more about `random` and `.randint()` later in the chapter.
+
+All you need to know is that this program simulates a coin toss:
+
+- 50% of the time, it's "Heads".
+- 50% of the time, it's "Tails".
+
+Run the program 5 times to get a taste of the `if/else` statement!
+
+How many times did it go Heads?
+
+```python
+import random
+
+num = random.randint(0, 1)   # Generates either 0 or 1
+
+if num > 0.5:
+  print('Heads')
+else:
+  print('Tails')
+```
+
+---
+
+### Grades Example (`grades.py`)
+
+Create a `grades.py` program that checks whether a grade is above or below 55.
+
+Start by creating a variable called `grade` and give it a value between 0-100.
+
+Write an `if/else` statement:
+
+- If grade ≥ 55, print "You passed."
+- Else, print "You failed."
+
+After you run the code, change `grade`'s value and rerun it.
+
+```python
+grade = int(input('What is the grade temperature?? '))
+
+if grade >= 55:
+  print("You passed.")
+else:
+  print("You failed.")
+```
+
+---
+
+### pH Levels (`ph_levels.py`)
+
+Create a program `ph_levels.py` to check whether a pH level is basic, acidic, or neutral.
+
+Ask the user for a value between 0 and 14:
+
+- If ph > 7, output "Basic".
+- If ph < 7, output "Acidic".
+- Else, output "Neutral".
+
+```python
+ph = int(input('What is the ph?? '))
+
+if ph > 7:
+  print('The ph is Basic')
+elif ph < 7:
+  print("The ph is Acidic")
+else:
+  print('The ph is Neutral')
+```
+
+---
+
+### Random Numbers (`random` module)
+
+We can use the `.randint()` function from the Python `random` module to generate a random number from a range.
+
+```python
+import random
+
+num = random.randint(1, 9)
+print(num)
+```
+
+This generates a random number between 1 and 9 (inclusive).
+
+---
+
+### Magic 8 Ball (`magic8.py`)
+
+The Magic 8 Ball is a popular toy used for fortune-telling and advice-seeking.
+
+Create a `magic8.py` program that responds to Yes or No questions with a random answer each time:
+
+```python
+import random
+
+input('Make a question for the MAGIC 8 BALL!!!! ')
+num = random.randint(1, 9)
+if num == 1:
+  print('Yes - definitely.')
+elif num == 2:
+  print('It is decidedly so.')
+elif num == 3:
+  print('Without a doubt.')
+elif num == 4:
+  print('Reply hazy, try again.')
+elif num == 5:
+  print('Ask again later.')
+elif num == 6:
+  print('Better not tell you now.')
+elif num == 7:
+  print('My sources say no.')
+elif num == 8:
+  print('Outlook not so good.')
+else:
+  print('Very doubtful.')
+```
+
+---
+
+### Logical Operators
+
+Logical operators (`and`, `or`, `not`) combine conditions:
+
+- `and`: Both conditions must be True.
+- `or`: At least one condition must be True.
+- `not`: Inverts the truth value.
+
+Example:
+
+```python
+if hunger > 4 and anger > 1:
+  print('Hangry')
+
+if coffee > 0 or bubble_tea > 0:
+  print('😊')
+
+if not tired:
+  print('Time to code!')
+```
+
+---
+
+### The Cyclone Roller Coaster (`the_cyclone.py`)
+
+Visitors must be at least 137 cm and pay 10 credits to ride.
+
+Create `the_cyclone.py` program:
+
+```python
+height = int(input('What is your height in cm??'))
+credits = int(input('How many credits do you have??'))
+
+if height < 137 and credits < 10:
+  print('Your height and credits are insufficient')
+elif height >= 137 and credits < 10:
+  print("You don't have enough credits.")
+elif height < 137 and credits >= 10:
+  print('You are not tall enough to ride.')
+else:
+  print('Enjoy the ride!')
+```
+
+---
+
+### Sorting Hat (`sorting_hat.py`)
+
+Write a program to determine Hogwarts house assignments:
+
+```python
+G = 0
+R = 0
+H = 0
+S = 0
+
+Q1 = int(input('Q1) Do you like Dawn or Dusk? \n1) Dawn\n2) Dusk\n'))
+
+if Q1 == 1:
+  G += 1
+  R += 1
+  print('Gryffindor:', G, '\nRavenclaw:', R)
+elif Q1 == 2:
+  H += 1
+  S += 1
+  print('Hufflepuff:', H, '\nSlytherin:', S)
+else:
+  print('Wrong input')
+
+Q2 = int(input('Q2) When I’m dead, I want people to remember me as:\n1) The Good\n2) The Great\n3) The Wise\n4) The Bold\n'))
+
+if Q2 == 1:
+  H += 2
+  print('Hufflepuff:', H)
+elif Q2 == 2:
+  S += 2
+  print('Slytherin:', S)
+elif Q2 == 3:
+  R += 2
+  print('Ravenclaw:', R)
+elif Q2 == 4:
+  G += 2
+  print('Gryffindor:', G)
+else:
+  print('Wrong input')
+
+Q3 = int(input('Q3) Which kind of instrument most pleases your ear?\n1) Violin\n2) Trumpet\n3) Piano\n4) Drum\n'))
+
+if Q3 == 1:
+  S += 4
+  print('Slytherin:', S)
+elif Q3 == 2:
+  H += 4
+  print('Hufflepuff:', H)
+elif Q3 == 3:
+  R += 4
+  print('Ravenclaw:', R)
+elif Q3 == 4:
+  G += 4
+  print('Gryffindor:', G)
+else:
+  print('Wrong input')
+```
 
 ---
 
