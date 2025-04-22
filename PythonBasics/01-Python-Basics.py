@@ -873,3 +873,208 @@ while guess !=i and tries < 3:
       print('Try again')
       
 """
+
+
+"""
+range()
+To loop through a set of code a specified number of times, we can use a for loop and the range() function.
+
+The range() function returns a sequence of numbers. By default, the sequence starts at 0 and increments by 1, ending at a specified number.
+
+for i in range(6):
+  print(i)
+
+For number i inside range(6), which is 0 through 5, print number i.
+
+This will output:
+
+0
+1
+2
+3
+4
+5
+
+Notice how this stops at 5, and 6 is not printed. This is because range() actually ends one before the specified number.
+"""
+
+"""
+Instructions
+detention
+
+Suppose you got detention and the teacher wants you to write "I will not use Snapchat in class" on the whiteboard 100 times.
+
+Create a detention.py program that does this using code.
+
+(This is where we begin to see the true power of computing. What takes humans hours can take a computer microseconds. 🤯)
+"""
+"""
+for i in range(101):
+  print(i)
+  print('I will not use Snapchat in class')
+"""
+
+
+
+"""
+Squares
+On May 6th, 1949, EDSAC, an early electronic stored-program computer, ran its first program at the University of Cambridge.
+
+It calculated and printed out a list of squares:
+
+0   0
+1   1
+2   4
+3   9
+4   16
+5   25
+6   36
+7   49
+8   64
+9   81
+
+On the left, you got all the single-digit numbers from 0 to 9. On the right are their squares. For example, in the last row, 9 × 9 = 81.
+
+This can be done in Python using string concatenation:
+
+# String concatenation
+
+for i in range(5):
+  print('The square of ' + str(i) + ' is ' + str(i*i))
+
+The output would look like:
+
+The square of 0 is 0
+The square of 1 is 1
+The square of 2 is 4
+The square of 3 is 9
+The square of 4 is 16
+
+# String Interpolation
+Let's learn a new tool that's very similar to string concatenation, before continuing on to the instructions.
+
+String interpolation is a process of substituting values of variables into placeholders in a string.
+
+For instance, if you have a template for saying hello to a person in an email like 'Hi {name}, nice to meet you!', you would like to replace the placeholder {name} with an actual name. This is string interpolation.
+
+The above program can be recreated using string interpolation using the {} sign:
+
+# String interpolation
+
+for i in range(5):
+  print(f'The square of {i} is {i*i}')
+
+Notice the f prefix before the quotes.
+"""
+
+"""
+Instructions
+"99 Bottles of Beer" is an old song that annoying kids, oops I mean everyone, sang on road trips to pass the time.
+
+Create a 99_bottles.py program and use a for loop and a range() function to print out all the verses of "99 Bottles of Beer."
+
+99 bottles of beer on the wall
+
+99 bottles of beer
+
+Take one down, pass it around
+
+98 bottles of beer on the wall
+
+And don't forget to use string interpolation!
+"""
+
+# String interpolation
+"""
+beers = 99
+for i in range(100):
+  print(f'{beers} bottles of beer on the wall')
+  print(f'{beers} bottles of beer')
+  beers -= 1
+  print('Take one down, pass it around')
+"""
+
+
+
+
+"""
+Let's do a recap. 🥳
+
+The while loop iterates over and over again while the condition is true:
+
+while coffee < 1:
+  print('tired')
+
+The for loop and the range() function to iterate for a certain number of times:
+
+for i in range(10):
+  print(i)
+
+Now let's take your learnings to the test!
+"""
+
+
+
+"""
+Instructions
+Fizz Buzz is a children's word game that teaches division. It's also a classic technical interview question at countless companies. 🐝
+
+Though this challenge may appear simple to experienced coders, it is designed to weed out 90% of job 
+candidates who cannot apply their coding knowledge to a new problem creatively. 
+Want to give it a try?
+
+Create a fizz_buzz.py program that outputs numbers from 1 to 100.
+
+Here's the catch:
+
+For multiples of 3, print "Fizz" instead of the number.
+For multiples of 5, print "Buzz" instead of the number.
+Here's the tricky part: For multiples of 3 and 5, print "FizzBuzz".
+The output should look like:
+
+1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBuzz
+...
+
+Btw, it's totally okay if you can't get this one... 
+it's a tough problem! Take a look at the hint and the solution before moving forward to the Checkpoint Project! ⛳️
+"""
+
+"""
+for i in range(101):
+    
+    if i % 3 == 0 and i % 5 == 0:
+        print('FizzBuzz')
+    elif i % 3 == 0:
+        print('Fizz')
+    elif i % 5 == 0:
+        print('Buzz')
+    else:
+        print(i)
+"""        
+        
+        
+"""
+Start by getting 1 to 100 printed out using a for loop and a range() function. Then, an if statement is needed.
+
+A logical operator might also come in handy.
+
+To find whether a number is the multiple of another number, the modulo operator % can be used. 
+We briefly went over this operator in Exercise 7: Temperature. It returns the remainder of a division.
+
+If a number num is a multiple of 3, it's num % 3 == 0, because the remainder is 0.
+"""
+

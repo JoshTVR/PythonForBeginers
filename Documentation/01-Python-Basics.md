@@ -622,6 +622,121 @@ This program introduces both **conditionals** and a **loop counter** using the `
 
 ---
 
+## range() Function and Loop Exercises
+
+### Using `range()` in For Loops
+
+To loop through a set of code a specified number of times, we can use a `for` loop and the `range()` function.
+
+The `range()` function returns a sequence of numbers. By default, the sequence starts at 0 and increments by 1, ending at a specified number.
+
+```python
+for i in range(6):
+  print(i)
+```
+
+**Output:**
+
+```
+0
+1
+2
+3
+4
+5
+```
+
+Notice how this stops at 5 and not 6. That's because `range()` ends one before the specified number.
+
+---
+
+### Detention Example (`detention.py`)
+
+Suppose you got detention and must write "I will not use Snapchat in class" 100 times. Python can automate this for you:
+
+```python
+for i in range(100):
+  print('I will not use Snapchat in class')
+```
+
+---
+
+### Historical Squares (`squares.py`)
+
+EDSAC, an early computer, calculated and printed squares of numbers from 0 to 9:
+
+```python
+for i in range(10):
+  print(f'{i}	{i*i}')
+```
+
+#### String Concatenation Example:
+
+```python
+for i in range(5):
+  print('The square of ' + str(i) + ' is ' + str(i*i))
+```
+
+#### String Interpolation (f-strings):
+
+```python
+for i in range(5):
+  print(f'The square of {i} is {i*i}')
+```
+
+---
+
+### 99 Bottles of Beer (`99_bottles.py`)
+
+Print all the verses of the classic song:
+
+```python
+beers = 99
+for i in range(99):
+  print(f'{beers} bottles of beer on the wall')
+  print(f'{beers} bottles of beer')
+  print('Take one down, pass it around')
+  beers -= 1
+```
+
+---
+
+### FizzBuzz Challenge (`fizz_buzz.py`)
+
+A classic interview problem:
+
+```python
+for i in range(1, 101):
+  if i % 3 == 0 and i % 5 == 0:
+    print('FizzBuzz')
+  elif i % 3 == 0:
+    print('Fizz')
+  elif i % 5 == 0:
+    print('Buzz')
+  else:
+    print(i)
+```
+
+This tests understanding of:
+
+- `range()`
+- `if/elif/else`
+- Logical operators
+- The modulo `%` operator (to check divisibility): it returns the remainder of a division. For example, `num % 3 == 0` checks if `num` is divisible by 3 with no remainder — meaning 3 fits exactly into the number. If true, it means `num` is a multiple of 3.
+
+---
+
+### Summary
+
+- `range(n)` generates a sequence from 0 to n-1.
+- `for` loops let us iterate that sequence.
+- `f"{var}"` is a cleaner way to format strings.
+- The `%` operator is useful for identifying multiples.
+
+These concepts build toward real-world automation, decision logic, and output formatting!
+
+---
+
 ### Final Thoughts
 
 With these fundamentals, you're equipped to write and understand basic Python scripts. Keep exploring, coding, and having fun!
