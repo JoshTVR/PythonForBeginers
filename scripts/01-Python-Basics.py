@@ -294,7 +294,7 @@ c = ((a**2 + b**2)**0.5)
 print(c)
 """
 """
-You learned variables in Python!
+You've learned variables in Python!
 
 Here's a recap of everything we learned in this chapter:
 
@@ -673,7 +673,7 @@ Lastly, print out the score for each house.
 
 Bonus: If you want to go further, see if you can figure out how to print out the house with the most points!s
 """
-
+"""
 G = 0
 R = 0
 H = 0
@@ -736,4 +736,140 @@ elif Q3 == 4:
   print(G)
 else:
   print('Wrong input')
+"""
+
+
+
+
+"""
+Loop
+
+In programming, a loop is used to repeat a block of code until a specified condition is satisfied. It's another incredibly powerful tool that's used a ton!
+
+People will often use the generic term “iterate” when referring to loops; iterate simply means “to repeat”.
+
+The first kind of loop that we are going to learn is the while loop. You can think of the while loop like a traffic circle.
+
+Each lap is one iteration! A car will iterate over and over again until it can't do so anymore.
+"""
+
+
+"""
+Before we dive deep into while loop, let's see a demo using a bank's ATM. 🏦
+
+Create an enter_pin.py program and type in the following:
+
+print('BANK OF CODÉDEX')
+
+pin = int(input('Enter your PIN: '))
+
+while pin != 1234:
+  pin = int(input('Incorrect PIN. Enter your PIN again: '))
+
+if pin == 1234:
+  print('PIN accepted!')
+
+Next, press the "Run" button to see the messages print to the terminal.
+
+Try the following in the terminal on the right 👉:
+
+Type 1111 and then the enter key.
+Type 2023 and then the enter key.
+Type 1991 and then the enter key.
+Type 1234 and then the enter key.
+Were you able to get access to the ATM?
+"""
+"""
+print('BANK OF CODÉDEX')
+
+pin = int(input('Enter your PIN: '))
+
+while pin != 1234:
+  pin = int(input('Incorrect PIN. Enter your PIN again: '))
+
+if pin == 1234:
+  print('PIN accepted!')
+"""
+
+
+"""
+# While Loop
+Now that we got a sneak peek of a while loop, let's see what it does! 🔄
+
+A while loop looks very similar to an if statement. Just like an if statement, it executes the code if the condition is True.
+
+However, the difference is that the while loop will continue to execute the code inside of it, over and over again, as long as the condition is True.
+
+while condition:
+  # code inside
+
+In other words, instead of executing once if a condition is true, it executes again and again while that condition is true.
+
+Here, we have a while loop that asks the user to guess a number:
+
+guess = 0
+
+while guess != 6:
+  guess = int(input('Guess the number: '))
+
+This will run over and over again until the user guesses the number 6:
+
+Guess the number: 5
+Guess the number: 3
+Guess the number: 6
+
+The variable guess starts at 0 on the first line and then the program enters the while loop:
+
+It checks the condition: is it true that 0 doesn't equal 6? Yep. Okay, run the code inside.
+It checks the condition again: is it true that 5 doesn't equal 6? Yep. Okay, run the code inside.
+It checks the condition again: is it true that 3 doesn't equal 6? Yep. Okay, run the code inside.
+It checks the condition again: is it true that 6 doesn't equal 6? Nope! So it exits the while loop and skips the code inside.
+To reiterate (no pun intended), at the beginning of each "loop", the condition is checked. The moment the condition becomes false, the program exits the while loop and continues on from the line after it.
+
+Note: If the condition is False from the get-go, then the code block wouldn't run at all and will be skipped.
+"""
+
+
+"""
+Instructions
+Let's continue on from the code above.
+
+Create a guess.py program and type in the following:
+
+guess = 0
+
+while guess != 6:
+  guess = int(input("Guess the number:  "))
+
+print("You got it!")
+
+Run the code a few times so that you understand what it does.
+
+Let's make it so that it's the same guessing game, but there is a new limit to the number of tries (it was infinite before).
+
+First, introduce a variable called tries at the top and give it a value of 0.
+
+Then, add a second condition with the tries variable to the while loop using a relational operator.
+"""
+
+"""
+
+import random
+
+num = random.randint(1, 6)
+guess = 0
+tries = 0
+i = 7
+while guess !=i and tries < 3:
+  guess = int(input("Guess the number:  "))
+  tries += 1
   
+  if guess == num and tries !=3:
+    print("You got it!")
+    print(num)
+  elif tries == 3:
+      print("You got out of tries:(")
+  else:
+      print('Try again')
+      
+"""

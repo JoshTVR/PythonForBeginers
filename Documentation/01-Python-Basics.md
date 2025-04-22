@@ -530,140 +530,95 @@ else:
 
 ---
 
-### String Manipulation
+## Loops and Iteration
 
-Python provides various methods to manipulate strings, including concatenation, slicing, and formatting:
+Loops are a powerful tool that allow programs to repeat instructions until a condition is met. This is commonly called _iteration_ — meaning to repeat.
 
-```python
-first_name = "Richard"
-last_name = "Hendricks"
-full_name = first_name + " " + last_name
-print(full_name)  # Output: Richard Hendricks
+#### The `while` Loop
 
-# Slicing strings
-print(full_name[:7])  # Output: Richard
-print(full_name[-9:])  # Output: Hendricks
-```
-
-String formatting example:
+A `while` loop continues to run as long as a given condition is `True`.
 
 ```python
-age = 25
-intro = f"My name is {full_name} and I am {age} years old."
-print(intro)
-# Output: My name is Richard Hendricks and I am 25 years old.
+while condition:
+  # code block runs repeatedly
 ```
+
+If the condition starts off as `False`, the code inside won’t run at all. If the condition remains `True`, the code keeps running indefinitely (this is called an _infinite loop_).
 
 ---
 
-### Lists
+### ATM PIN Demo (`enter_pin.py`)
 
-Lists are collections of items that can store different data types:
-
-```python
-fruits = ["apple", "banana", "cherry"]
-print(fruits[0])  # Output: apple
-```
-
-Lists can be modified:
+Try this program that simulates entering a bank PIN:
 
 ```python
-fruits.append("orange")
-print(fruits)  # Output: ['apple', 'banana', 'cherry', 'orange']
+print('BANK OF CODÉDEX')
+
+pin = int(input('Enter your PIN: '))
+
+while pin != 1234:
+  pin = int(input('Incorrect PIN. Enter your PIN again: '))
+
+if pin == 1234:
+  print('PIN accepted!')
 ```
+
+Try running it and entering different numbers until you get it right!
 
 ---
 
-### Conditional Statements
+### Guessing Game (`guess.py`)
 
-Python uses conditional statements (`if`, `elif`, `else`) to make decisions:
+Here's another example that uses a loop to let the user guess a number:
 
 ```python
-score = 85
+guess = 0
 
-if score >= 90:
-    print("Grade: A")
-elif score >= 80:
-    print("Grade: B")
-else:
-    print("Grade: C")
+while guess != 6:
+  guess = int(input("Guess the number:  "))
 
-# Output: Grade: B
+print("You got it!")
 ```
+
+Now let’s limit the number of tries!
 
 ---
 
-### Loops
+### Limited Attempts (`guess_limit.py`)
 
-Loops help to execute code repeatedly.
-
-#### For Loop
+In this version, the user has a maximum of 3 attempts to guess the number:
 
 ```python
-for fruit in fruits:
-    print(fruit)
+import random
 
-# Output:
-# apple
-# banana
-# cherry
-# orange
+num = random.randint(1, 6)
+guess = 0
+tries = 0
+i = 7
+
+while guess != i and tries < 3:
+  guess = int(input("Guess the number:  "))
+  tries += 1
+
+  if guess == num and tries != 3:
+    print("You got it!")
+    print(num)
+  elif tries == 3:
+    print("You got out of tries :(")
+  else:
+    print('Try again')
 ```
 
-#### While Loop
-
-```python
-count = 0
-while count < 3:
-    print("Count is:", count)
-    count += 1
-
-# Output:
-# Count is: 0
-# Count is: 1
-# Count is: 2
-```
+This program introduces both **conditionals** and a **loop counter** using the `tries` variable to exit after three attempts.
 
 ---
 
-### Functions
+### Loop notes
 
-Functions encapsulate reusable code blocks:
-
-```python
-def greet(name):
-    return f"Hello, {name}!"
-
-message = greet("Dinesh")
-print(message)  # Output: Hello, Dinesh!
-```
-
----
-
-### Importing Modules
-
-Python allows importing external libraries:
-
-```python
-import math
-
-print(math.sqrt(16))  # Output: 4.0
-```
-
----
-
-### Handling Errors (Try/Except)
-
-Python handles exceptions gracefully using `try` and `except`:
-
-```python
-try:
-    result = 10 / 0
-except ZeroDivisionError:
-    print("Cannot divide by zero!")
-
-# Output: Cannot divide by zero!
-```
+- `while` loops repeat a block of code while a condition is `True`.
+- Be careful with loops that never end (infinite loops).
+- You can combine `while` with counters to control the number of iterations.
+- Loops are ideal for games, authentication systems, and simulations.
 
 ---
 
