@@ -722,7 +722,7 @@ This tests understanding of:
 - `range()`
 - `if/elif/else`
 - Logical operators
-- The modulo `%` operator (to check divisibility): it returns the remainder of a division. For example, `num % 3 == 0` checks if `num` is divisible by 3 with no remainder — meaning 3 fits exactly into the number. If true, it means `num` is a multiple of 3.
+- The module `%` operator (to check divisibility): it returns the remainder of a division. For example, `num % 3 == 0` checks if `num` is divisible by 3 with no remainder — meaning 3 fits exactly into the number. If true, it means `num` is a multiple of 3.
 
 ---
 

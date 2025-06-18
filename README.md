@@ -16,3 +16,10 @@ All the code we write in this course will be in Python files, with the .py exten
 Hope you enjoy my progress learning Python :\)
 
 ![alt text](Images/pythonlogo.jpg)
+
+## Recursos recomendados y aprendizaje continuo
+
+- [Python Docs](https://docs.python.org/es/3/tutorial/index.html) – La mejor referencia oficial.
+- [Real Python](https://realpython.com/) – Tutoriales y ejemplos avanzados.
+- [PEP8](https://www.python.org/dev/peps/pep-0008/) – Guía de estilo y buenas prácticas de código Python.
+- Explora notebooks en [Kaggle](https://www.kaggle.com/) para ver aplicaciones reales de análisis de datos y machine learning en Python.
