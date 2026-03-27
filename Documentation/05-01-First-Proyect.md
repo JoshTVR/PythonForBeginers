@@ -1,189 +1,177 @@
-Checkpoint Project ⛳️
-Congratulations on completing the first four chapters of The Legend of Python! Now let's use the skills you've learned (variables, control flow statements, and loops) to build a Python project on your own.
+# Chapter 5 — First Project: Rock Paper Scissors 🎮
 
-Use the Python Code Editor, Visual Studio Code, or your code editor of choice for this project.
+Congratulations on completing the first four chapters of The Legend of Python! Variables, control flow, loops — you've got all the building blocks. Now let's combine everything and build a real program.
 
-Terminal and our three characters
+This is your first checkpoint project. No hand-holding — just a project brief, the concepts you've learned, and your own problem-solving. 🧠
+
+---
 
 # Rock Paper Scissors
 
-Rock, Paper, Scissors is a classic game that resonates with folks from around the world.
+Rock, Paper, Scissors is a classic game played worldwide. Two players simultaneously reveal one of three shapes — the rules determine the winner.
 
-Create a rock_paper_scissors.py program where the user plays a round of Rock, Paper, Scissors against the computer.
+The rules:
+- Rock beats Scissors ✊ > ✌️
+- Scissors beat Paper ✌️ > ✋
+- Paper beats Rock ✋ > ✊
 
-The rules are as follows:
+---
 
-Rock beats Scissors.
-Scissors beat Paper.
-Paper beats Rock.
-First, create a player and a computer variable.
+# Planning Before Coding
 
-Prompt the player to select number between 1 and 3 with input() and store it in player:
+Before writing a single line, let's think about the logic. This is how real developers work — plan first, code second.
 
-1 is for '✊' (Rock).
-2 is for '✋' (Paper).
-3 is for '✌️' (Scissors).
-Then, use the random.randint() method to assign a number to the computer variable (1 to 3).
+The program needs to:
+1. Show the player the 3 options
+2. Get the player's choice (1, 2, or 3)
+3. Generate a random choice for the computer
+4. Compare the two choices
+5. Print who won
 
-Lastly, use control flow to compare the user's choice and the computer's choice, determine the winner, and print out who won.
+The tricky part is step 4. There are 9 possible combinations (3 × 3). Let's map them all out:
 
-The output should look something like this:
+| User | CPU | Result |
+|------|-----|--------|
+| 1 Rock | 1 Rock | Tie |
+| 1 Rock | 2 Paper | CPU wins |
+| 1 Rock | 3 Scissors | User wins |
+| 2 Paper | 1 Rock | User wins |
+| 2 Paper | 2 Paper | Tie |
+| 2 Paper | 3 Scissors | CPU wins |
+| 3 Scissors | 1 Rock | CPU wins |
+| 3 Scissors | 2 Paper | User wins |
+| 3 Scissors | 3 Scissors | Tie |
 
-===================
-Rock Paper Scissors
-===================
+From this table we can extract the conditions:
 
-1. ✊
-2. ✋
-3. ✌️
-   Pick a number: 2
+**User wins when:**
+- `user == 1 and cpu == 3` (Rock beats Scissors)
+- `user == 2 and cpu == 1` (Paper beats Rock)
+- `user == 3 and cpu == 2` (Scissors beats Paper)
+
+**CPU wins:** all other non-tie combinations.
+
+**Tie:** `user == cpu`
+
+Map the logic out *before* typing code. It saves so much debugging time.
+
+---
+
+## Instructions
+
+Create a `Rock-Paper-Scissors.py` program where:
+
+1. The player picks a number (1 = Rock, 2 = Paper, 3 = Scissors)
+2. The computer picks a random number (1–3) using `random.randint()`
+3. The program determines the winner using `if/elif/else`
+4. Prints the result
+
+Expected output:
+
+```
+1) ✊
+2) ✋
+3) ✌️
+Pick a number: 2
 
 You chose: ✋
 CPU chose: ✊
-The player won!
+You win!
+```
 
-# Bonus: Rock Paper Scissors Lizard Spock
-
-Okay, you have played Rock, Paper, Scissors, but have you heard of Rock, Paper, Scissors, Lizard, Spock? It's a fun variation of the classic game brought to popularity with a TV show called The Big Bang Theory.
-
-The rules follow the classic “Rock Paper Scissors” game, but with two new choices – “Lizard” and “Spock”:
-
-Scissors cut Paper.
-Paper covers Rock.
-Rock crushes Lizard.
-Lizard poisons Spock.
-Spock smashes Scissors.
-Scissors beat Lizard.
-Lizard eats Paper.
-Paper disproves Spock.
-Spock vaporizes Rock.
-Rock breaks Scissors.
-Watch this video to understand it better.
-
-Here's a note from the creator, Sam Kass:
-
-“I invented this game because it seems like when you know someone well enough, 75-80% of any Rock Paper Scissors games you play with that person end up in a tie. Well, here is a slight variation that reduces that probability. This version is also nice because it satisfies the Law of Fives.”
-
-Go back to your Rock Paper Scissors program and turn it into Rock Paper Scissors Lizard Spock!
-
-Use '🖖' for "Spock" and '🦎' for "Lizard".
-
-The output should look something like this:
-
-================================
-Rock Paper Scissors Lizard Spock
-================================
-
-1. ✊
-2. ✋
-3. ✌️
-4. 🦎
-5. 🖖
-   Pick a number: 3
-
-You chose: ✌️
-CPU chose: ✌️
-It's a tie!
+## Solved Exercise:
 
 ```py
-print("Welcome to my first project\n \n")
-
-
-print("██████╗  ██████╗  ██████╗ ██╗  ██╗    ██████╗  █████╗ ██████╗ ███████╗██████╗     ███████╗ ██████╗██╗███████╗███████╗ ██████╗ ██████╗ ███████╗"
-    "\n██╔══██╗██╔═══██╗██╔═══██╗██║ ██╔╝    ██╔══██╗██╔══██╗██╔══██╗██╔════╝██╔══██╗    ██╔════╝██╔════╝██║██╔════╝██╔════╝██╔═══██╗██╔══██╗██╔════╝"
-    "\n██████╔╝██║   ██║██║   ██║█████╔╝     ██████╔╝███████║██████╔╝█████╗  ██████╔╝    ███████╗██║     ██║███████╗███████╗██║   ██║██████╔╝███████╗"
-    "\n██╔══██╗██║   ██║██║   ██║██╔═██╗     ██╔═══╝ ██╔══██║██╔═══╝ ██╔══╝  ██╔══██╗    ╚════██║██║     ██║╚════██║╚════██║██║   ██║██╔══██╗╚════██║"
-    "\n██║  ██║╚██████╔╝╚██████╔╝██║  ██╗    ██║     ██║  ██║██║     ███████╗██║  ██║    ███████║╚██████╗██║███████║███████║╚██████╔╝██║  ██║███████║"
-    "\n╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝    ╚═╝     ╚═╝  ╚═╝╚═╝     ╚══════╝╚═╝  ╚═╝    ╚══════╝ ╚═════╝╚═╝╚══════╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝\n \n")
-
-user_choice = int(input("1) ✊"
-                    "\n2) ✋"
-                    "\n3) ✌️"
-                    "\nPick a number to fight against the IA: "))
+# Rock-Paper-Scissors.py
 
 import random
 
-num = random.randint(1, 3)
+user_choice = int(input('1) ✊\n2) ✋\n3) ✌️\nPick a number: '))
+cpu = random.randint(1, 3)
 
-
-if user_choice > 3 or user_choice < 1:
-    print("Thats not a correct answer")
-    print(f'CPU choice: {num} \nUser Choice: {user_choice}')
-elif num == user_choice:
-    print("Its a tie, try it again")
-    print(f'CPU choice: {num} \nUser Choice: {user_choice}')
-elif user_choice == 3 and num !=1:
-    print("You have defeted the IA by choosing scissors!! Cogratz!!")
-    print(f'CPU choice: {num} \nUser Choice: {user_choice}')
-elif user_choice == 2 and num !=3:
-    print("You have defeted the IA by choosing paper!! Cogratz!!")
-    print(f'CPU choice: {num} \nUser Choice: {user_choice}')
-elif user_choice == 1 and num !=2:
-    print("You have defeted the IA by choosing rock!! Cogratz!!")
-    print(f'CPU choice: {num} \nUser Choice: {user_choice}')
-elif num == user_choice:
-    print("Its a tie, try it again")
-    print(f'CPU choice: {num} \nUser Choice: {user_choice}')
-elif num == 3 and user_choice !=1:
-    print("Sorry, IA has destroyed you by choosing scissors...")
-    print(f'CPU choice: {num} \nUser Choice: {user_choice}')
-elif num == 2 and user_choice !=3:
-    print("Sorry, IA has destroyed you by choosing paper...")
-    print(f'CPU choice: {num} \nUser Choice: {user_choice}')
-elif num == 1 and user_choice !=2:
-    print("Sorry, IA has destroyed you by choosing rock...")
-    print(f'CPU choice: {num} \nUser Choice: {user_choice}')
+if user_choice < 1 or user_choice > 3:
+    print('Invalid choice!')
+elif user_choice == cpu:
+    print('Tie! Try again.')
+elif (user_choice == 1 and cpu == 3) or \
+     (user_choice == 2 and cpu == 1) or \
+     (user_choice == 3 and cpu == 2):
+    print('You win! 🎉')
 else:
-    print("No winner for this round")
-    print(f'CPU choice: {num} \nUser Choice: {user_choice}')
+    print('CPU wins! 🤖')
+
+print(f'Your choice: {user_choice} | CPU: {cpu}')
 ```
 
-| User     | CPU      | Winner |
-| -------- | -------- | ------ |
-| Rock     | Rock     | Tie    |
-| Rock     | Paper    | CPU    |
-| Rock     | Scissors | User   |
-| Paper    | Rock     | User   |
-| Paper    | Paper    | Tie    |
-| Paper    | Scissors | CPU    |
-| Scissors | Rock     | CPU    |
-| Scissors | Paper    | User   |
-| Scissors | Scissors | Tie    |
-
-With numbers (like your code):
-
-| user_choice | cpu_choice | Result |
-| ----------- | ---------- | ------ |
-| 1           | 1          | Tie    |
-| 1           | 2          | CPU    |
-| 1           | 3          | User   |
-| 2           | 1          | User   |
-| 2           | 2          | Tie    |
-| 2           | 3          | CPU    |
-| 3           | 1          | CPU    |
-| 3           | 2          | User   |
-| 3           | 3          | Tie    |
-
 ---
 
-### How to use it:
+# Bonus: Rock Paper Scissors Lizard Spock
 
-- **Tie:** `user_choice == cpu_choice`
-- **User wins:**
+You've played Rock Paper Scissors, but have you heard of Rock Paper Scissors Lizard Spock? 🖖🦎
 
-  - `(user_choice == 1 and cpu_choice == 3)`
-  - `(user_choice == 2 and cpu_choice == 1)`
-  - `(user_choice == 3 and cpu_choice == 2)`
+It's a variation made popular by the TV show *The Big Bang Theory*. The inventor, Sam Kass, created it because:
 
-- **CPU wins:**
+> "When you know someone well enough, 75-80% of Rock Paper Scissors games end in a tie. This version reduces that probability."
 
-  - `(cpu_choice == 1 and user_choice == 3)`
-  - `(cpu_choice == 2 and user_choice == 1)`
-  - `(cpu_choice == 3 and user_choice == 2)`
+The rules add 4 more outcomes to the original:
 
-- **Any other value:** Invalid option
+- Rock crushes Lizard 🪨 > 🦎
+- Lizard poisons Spock 🦎 > 🖖
+- Spock smashes Scissors 🖖 > ✌️
+- Scissors decapitate Lizard ✌️ > 🦎
+- Lizard eats Paper 🦎 > ✋
+- Paper disproves Spock ✋ > 🖖
+- Spock vaporizes Rock 🖖 > ✊
+- (plus the original 6 rules)
 
----
+Now there are 25 possible combinations (5 × 5). Writing 25 `elif` conditions gets messy fast.
+
+The clean approach: use the logic tables to list exactly which combinations make each player win, same as above.
+
+The full outcome table:
+
+| Symbol | Beats |
+|--------|-------|
+| 1 ✊ Rock | 3 ✌️ Scissors, 4 🦎 Lizard |
+| 2 ✋ Paper | 1 ✊ Rock, 5 🖖 Spock |
+| 3 ✌️ Scissors | 2 ✋ Paper, 4 🦎 Lizard |
+| 4 🦎 Lizard | 2 ✋ Paper, 5 🖖 Spock |
+| 5 🖖 Spock | 1 ✊ Rock, 3 ✌️ Scissors |
+
+## Solved Exercise:
+
+```py
+# Rock-Paper-Scissors-Lizard-Spock.py
+
+import random
+
+user = int(input('1) ✊  2) ✋  3) ✌️  4) 🦎  5) 🖖\nPick: '))
+cpu = random.randint(1, 5)
+
+# Winning combinations (user_choice, cpu_choice)
+user_wins = [
+    (1, 3), (1, 4),    # Rock beats Scissors, Lizard
+    (2, 1), (2, 5),    # Paper beats Rock, Spock
+    (3, 2), (3, 4),    # Scissors beats Paper, Lizard
+    (4, 2), (4, 5),    # Lizard beats Paper, Spock
+    (5, 1), (5, 3)     # Spock beats Rock, Scissors
+]
+
+if user < 1 or user > 5:
+    print('Invalid choice!')
+elif user == cpu:
+    print("It's a tie!")
+elif (user, cpu) in user_wins:
+    print('You win! 🎉')
+else:
+    print('CPU wins! 🤖')
+
+print(f'You: {user} | CPU: {cpu}')
+```
 
 > [!TIP]
-> This helps your logic always give the correct result, regardless of the order.
+> When you have this many combinations, storing them in a list of tuples is much cleaner than a long `if/elif` chain. When you learn dictionaries in Chapter 8, there's an even neater way to handle this. 👀
+
+---
+
+Chapter 5 done! 🎮 Next: **Chapter 6 — Lists**. One of Python's most powerful data structures.

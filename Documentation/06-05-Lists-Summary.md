@@ -1,54 +1,76 @@
-# Lists Summary
+# Lists — Summary
 
-You just added a super helpful tool to your coding toolbox: lists!
+You just added a super helpful tool to your coding toolbox: lists! 🎉
 
-Here's a recap of the chapter:
+Here's a full recap of everything from this chapter:
 
-- Lists are used to store different items in a single variable.
-- An index is an item's position in a list. Python lists are \* 0-indexed.
-- Slicing can access certain parts of a list with `name[start:end]`.
-- Python has built-in functions like `len()`, `max()`, `min()`.
-- Lists have built-in methods like `.append()`, `.insert()`, `.remove()`, `.pop().`
-- We can iterate over a list using `for-in`.
+- Lists store multiple items in a single variable: `my_list = ['a', 'b', 'c']`
+- Lists are 0-indexed: the first item is at index `0`, not `1`.
+- Negative indices count from the end: `list[-1]` is the last item.
+- Slicing accesses a range: `list[start:end]` (end is non-inclusive).
+- Lists can hold mixed data types: strings, ints, floats, booleans — all in one.
+- The `in` operator checks membership: `'x' in my_list` returns `True` or `False`.
+- You can update items by index: `list[0] = 'new value'`
+- Built-in functions: `len()`, `max()`, `min()`, `sum()`, `sorted()`
+- All 11 list methods: `.append()`, `.clear()`, `.copy()`, `.count()`, `.extend()`, `.index()`, `.insert()`, `.pop()`, `.remove()`, `.reverse()`, `.sort()`
+- Two iteration patterns:
+  - `for item in list` — loop by value
+  - `for i in range(len(list))` — loop by index
 
-Now let's pull everything together one last time and build your bucket list!
+---
+
+# Quick Cheat Sheet
+
+| What you want | Syntax | Example |
+|---|---|---|
+| Create a list | `name = [a, b, c]` | `scores = [90, 85, 72]` |
+| Access by index | `list[i]` | `scores[0]` → `90` |
+| Access last item | `list[-1]` | `scores[-1]` → `72` |
+| Slice | `list[start:end]` | `scores[0:2]` → `[90, 85]` |
+| Modify item | `list[i] = x` | `scores[0] = 95` |
+| Add to end | `list.append(x)` | `scores.append(100)` |
+| Remove by value | `list.remove(x)` | `scores.remove(85)` |
+| Remove by index | `list.pop(i)` | `scores.pop(0)` |
+| Get length | `len(list)` | `len(scores)` → `3` |
+| Iterate | `for x in list` | `for s in scores: print(s)` |
+
+---
 
 ## Instructions
 
-A bucket list is a number of experiences or achievements that a person hopes to have or accomplish during their lifetime. 🪣
+A bucket list is a collection of experiences or achievements you hope to accomplish in your lifetime. 🪣
 
-Create a bucket_list.py program with your own unique bucket list.
+Create a `bucket_list.py` program that:
 
-First, create a `things_to_do` list, and add things you want to do in your lifetime.
+1. Creates a `things_to_do` list with at least 10 goals — make them real, make them yours
+2. Iterates over the list and prints everything out
 
 For example:
 
 ```py
 things_to_do = [
-'🚀 Create the dopest learn to code platform ever.',
-'⛰️ Hike the Pacific Crest Trail.',
-'🏡 Build an A-frame house and raise some goats.',
-'🌏 Live somewhere in Asia for a year.',
-'🎸 Release an album.',
-'📝 Write a book.',
-'🏆 Reach 100k subscribers on YouTube.',
-'🚐 Road trip with the fam.',
-'🍳 Open a cozy diner upstate.',
-'👴🏻 Grow old with no regrets.'
+    '🚀 Create the dopest learn-to-code platform ever.',
+    '⛰️ Hike the Pacific Crest Trail.',
+    '🏡 Build an A-frame house and raise some goats.',
+    '🌏 Live somewhere in Asia for a year.',
+    '🎸 Release an album.',
+    '📝 Write a book.',
+    '🏆 Reach 100k subscribers on YouTube.',
+    '🚐 Road trip with the fam.',
+    '🍳 Open a cozy diner upstate.',
+    '👴🏻 Grow old with no regrets.'
 ]
 ```
 
-Now, iterate over the list and print everything out.
+The days are long but the years are short — write the things you actually want to do.
 
-Lastly, to keep yourself accountable, take a screenshot of your program and post your bucket list to Twitter by clicking the icon below.
-
-The days are long but the years are short; from the whole Codédex team, we hope you accomplish all of your wildest dreams!
-
-ଘ(੭ˊᵕˋ)੭\* ੈ✩‧˚
+ଘ(੭ˊᵕˋ)੭* ੈ✩‧˚
 
 ## Solved Exercise:
 
 ```py
+# bucket_list.py
+
 things_to_do = [
     '🌐 Launch my own tech startup focused on immersive digital experiences.',
     '🎮 Develop a viral indie video game and see streamers play it.',
@@ -66,9 +88,9 @@ things_to_do = [
     '💪 Build a high-performing, creative team for a passion project.',
     '🧘‍♂️ Take a digital detox retreat in the mountains.',
     '🤝 Negotiate my first big international business deal.',
-    '🎓 Finish my engineering degree with a project I’m proud to showcase.',
+    '🎓 Finish my engineering degree with a project I\'m proud to showcase.',
     '📊 Launch a SaaS product that automates business intelligence for small businesses.',
-    '🏅 Get certified in a hot tech area—AI, cloud computing, or advanced data analytics.',
+    '🏅 Get certified in a hot tech area — AI, cloud computing, or advanced data analytics.',
     '🎵 Compose and release an original soundtrack for a game or film.',
     '🚗 Road trip across Mexico, visiting every major archaeological site.',
     '🔗 Build an online community for young digital creators.',
@@ -77,7 +99,10 @@ things_to_do = [
     '👴🏻 Look back and know I built something that lasts longer than me.'
 ]
 
-
 for i in range(len(things_to_do)):
-  print(things_to_do[i])
+    print(things_to_do[i])
 ```
+
+---
+
+Chapter 6 — done! 🏆 Next up: **Chapter 7 — Functions**. Time to stop repeating yourself. 🚀
